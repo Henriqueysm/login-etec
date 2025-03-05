@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Login e Cadastro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="panel left-panel">
+            <img src="logo.png" alt="Etec Logo" class="logo login-logo">
+            <img src="logo pb.png" alt="Etec Logo Alternativo" class="logo signup-logo">
+            <p>Entre e conecte-se com a galera da ETEC, expanda seu network e compartilhe suas experiências!</p>
+        </div>
+        <div class="panel right-panel">
+            <div class="form-container login active">
+                <form class="form">
+                    <p class="title">Faça login na Rede Etec</p>
+<br><br>
+                    <label>
+                        <input class="input" type="email" placeholder="" required="">
+                        <span>Email</span>
+                    </label>
+
+                    <label class="password-label">
+                        <input class="input password-input" type="password" placeholder="" required="">
+                        <span>Senha</span>
+                        <span class="toggle-password">
+                            <img src="eye-closed.png" alt="Mostrar senha">
+                        </span>
+                    </label>
+                    
+
+                <button class="btn-avancar">Avançar</button><br>
+                
+                <p class="btn-criar">Não tem conta? <span class="criar" onclick="toggleForm()"><a href="#">Criar conta</a> </span></p>
+            </form>
+            </div>
+
+            <div class="form-container signup">
+                <form class="form">
+                    <p class="title1">Inicie uma conta</p>
+                    <br>
+                    
+                        <div class="flex">
+                        <label>
+                            <input class="input" type="text" placeholder="" required="">
+                            <span>Nome</span>
+                        </label>
+                
+                        <label>
+                            <input class="input" type="text" placeholder="" required="">
+                            <span>Sobrenome</span>
+                        </label>
+                    </div>  
+                            
+                    <label>
+                        <input class="input" type="email" placeholder="" required="">
+                        <span>Email</span>
+                    </label> 
+                    <label class="password-label">
+                        <input class="input password-input" type="password" placeholder="" required="">
+                        <span>Senha</span>
+                        <span class="toggle-password">
+                            <img src="eye-closed.png" alt="Mostrar senha">
+                        </span>
+                    </label>
+                    
+                    <label class="password-label">
+                        <input class="input password-input" type="password" placeholder="" required="">
+                        <span>Senha</span>
+                        <span class="toggle-password">
+                            <img src="eye-closed.png" alt="Mostrar senha">
+                        </span>
+                    </label>
+                    
+                        <label>
+                        <input class="input" type="date" placeholder="" required="">
+                        <span>Senha</span>
+                    </label>
+                    <button class="btn-avancar">Avançar</button>
+                    <p class="btn-entrar">Já tem uma conta ? <span class="entrar" onclick="toggleForm()"><a href="#">Entrar</a> </span></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+document.querySelectorAll(".toggle-password").forEach(toggle => {
+    toggle.addEventListener("click", function() {
+        const passwordInput = this.previousElementSibling.previousElementSibling; // Acha o input de senha
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            this.querySelector("img").src = "eye-open.png"; // Muda para olho aberto
+        } else {
+            passwordInput.type = "password";
+            this.querySelector("img").src = "eye-closed.png"; // Muda para olho fechado
+        }
+    });
+});
+
+    </script>
+    <script src="script (login 2).js"></script>
+</body>
+</html>
