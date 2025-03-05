@@ -15,15 +15,18 @@ body {
 }
 .container {
   display: flex;
-  width: 800px;
-  height: 500px;
+  flex-wrap: wrap; /* Permite que os elementos quebrem a linha */
+  width: 90vw; /* Usa porcentagem para se adaptar a diferentes telas */
+  max-width: 900px;
+  height: auto;
+  min-height: 500px;
   background: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   overflow: hidden;
-  position: relative;
   transition: transform 0.5s ease-in-out;
 }
+
 .panel {
   width: 50%;
   display: flex;
@@ -328,3 +331,58 @@ input:-webkit-autofill::first-line {
       opacity: 0;
     }
   }
+
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column-reverse;
+      width: 100%;
+      height: auto;
+      border-radius: 0;
+    }
+  
+    .panel {
+      width: 100%; /* Ocupa toda a largura da tela */
+      padding: 20px;
+    }
+  
+    .right-panel {
+      order: -1; /* Move o painel para cima */
+    }
+  
+    .form-container {
+      max-width: 100%;
+    }
+  
+    .logo {
+      width: 200px; /* Reduz o tamanho do logo em telas pequenas */
+    }
+  
+    .title, .title1 {
+      font-size: 18px; /* Ajusta os títulos */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form-container {
+      padding: 10px;
+    }
+  
+    input {
+      font-size: 16px;
+      padding: 12px;
+    }
+  
+    button {
+      font-size: 16px;
+      padding: 12px;
+    }
+  
+    .logo {
+      width: 150px; /* Deixa o logo ainda menor para encaixar melhor */
+    }
+  
+    .title, .title1 {
+      font-size: 16px;
+    }
+  }
+  
